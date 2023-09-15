@@ -1,0 +1,40 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local EmoteBar = require(ReplicatedStorage:WaitForChild("EmoteBar"))
+
+EmoteBar.configureServer({
+	useDefaultEmotes = false,
+})
+
+EmoteBar.setEmotes({
+	{
+		name = "Cheer",
+		animation = "rbxassetid://5895324424",
+		image = "rbxassetid://12422929849",
+		defaultTempo = 1,
+	},
+	{
+		name = "Applaud",
+		animation = "rbxassetid://10713966026",
+		image = "rbxassetid://12422930552",
+		defaultTempo = 2,
+	},
+	{
+		name = "Dolphin",
+		animation = "rbxassetid://10714068222",
+		image = "rbxassetid://12422931305",
+		defaultTempo = 3,
+	},
+	{
+		name = "Floss",
+		animation = "rbxassetid://10714340543",
+		image = "rbxassetid://12422932241",
+		defaultTempo = 4,
+	},
+	{
+		name = "Louder",
+		animation = "rbxassetid://10714385204",
+		image = "rbxassetid://12422933003",
+		defaultTempo = 5,
+	},
+})
