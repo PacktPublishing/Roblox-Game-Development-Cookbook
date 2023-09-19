@@ -1,1 +1,10 @@
+local part = script.Parent
 
+local function onTouched(hit)
+	local humanoid = hit.Parent:FindFirstChildWhichIsA('Humanoid')
+	if humanoid then
+		humanoid.Sit = true
+	end
+	end
+
+part.Touched:Connect(onTouched)
