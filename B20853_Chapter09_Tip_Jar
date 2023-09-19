@@ -1,5 +1,0 @@
-local GamepassId = 9999999 --Change to your deveoper product's ID
-
-script.Parent.ClickDetector.MouseClick:connect(function(player)
-	Game:GetService("MarketplaceService"):PromptPurchase(player, GamepassId)
-end)
