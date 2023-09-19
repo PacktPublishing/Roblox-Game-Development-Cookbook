@@ -1,1 +1,27 @@
+local ServerStorage = game:GetService("ServerStorage")
+local MarketplaceService = game:GetService("MarketplaceService")
+local Players = game:GetService("Players")
+local gamepassId = 15508777 --Put the ID of the asset here
+local toolNames = {"FlashLight","FireFliesJar","GlowStick"} --Must be in lighting
+local toolsParent = ServerStorage
 
+local function onPlayerAdded(player)
+    local function onCharacterAdded(character)
+        if MarketplaceService:UserOwnsGamePassAsync(player.UserId, gamepassId) then
+            for i = 1, #toolNames do
+                local tool = toolsParent:FindFirstChild(toolNames[i])
+                if tool then
+                    local clone = tool:Clone()
+                    clone.Parent = player.Backpack
+                end
+            end
+        end
+    end
+
+    if player.Character then
+        onCharacterAdded(player.Character)
+    end
+    player.CharacterAdded:Connect(onCharacterAdded)
+end
+
+Players.PlayerAdded:Connect(onPlayerAdded)
