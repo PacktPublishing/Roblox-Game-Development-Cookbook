@@ -1,0 +1,7 @@
+while true do 
+
+wait(0.1) 
+
+script.Parent.Sound:play() 
+
+end 
